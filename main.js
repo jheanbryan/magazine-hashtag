@@ -61,9 +61,10 @@ for (const produtoCatalogo of catalogo){
     const cartaoProduto = `
         <div class="card-produto">
             <img src="${produtoCatalogo.srcImg}" alt="processador athlon3000g" class="img-produto">
-            <h3>${produtoCatalogo.nome}</h3>
+            <h4 class="nome-produto">${produtoCatalogo.nome}</h4>
             <span>${produtoCatalogo.marca}</span>
-            <h3>R$ ${produtoCatalogo.valor}</h3>
+            <h4>R$ ${produtoCatalogo.valor}</h4>
+            <button class="btn-carrinho">Carrinho</button>
         </div>`
     document.getElementById('container-produto').innerHTML += cartaoProduto;
 }

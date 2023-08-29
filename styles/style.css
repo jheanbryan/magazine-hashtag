@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #container-produto{
     display: flex;
@@ -11,6 +12,7 @@
     flex-wrap: wrap;
     max-width: 800px;
     margin-inline: auto;
+    margin-top: 40px;
 }
 .card-produto{
     background-color: gainsboro;
@@ -19,7 +21,23 @@
     flex-direction: column;
     border-radius: 10px;
     height: auto;
+    cursor: pointer;
+    gap: 5px;
+}
+.card-produto:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
 }
 .img-produto{
     width: 100px;
+    text-align: center;
+    background-color: white;
+    margin-inline: auto;
+}
+.btn-carrinho{
+    background-color: gray;
+    border: 0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
 }
