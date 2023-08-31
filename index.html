@@ -7,13 +7,42 @@
     <link rel="stylesheet" href="/styles/style.css">
   </head>
   <body>
-      <header></header>
+    <section class="carrinho" id="carrinho">
+      <section class="menu-carrinho">
+        <div>
+          <img src="assets/icons/cart-shopping-solid.svg" alt="" class="icon">
+        </div>
+        <div id="btnFecharCarrinho">
+          <img src="assets/icons/xmark-solid.svg" alt="" class="icon">
+        </div>
+      </section>
+
+      <section id="produtos-carrinho">
+        <span>rx580</span>
+        <span>ryzrn 5 4600g</span>
+      </section>
+      <p>R$100,00</p>
+      <button>Finalizar Compra</button>
+    </section>
+
+    <header>
+      <nav>
+        <div class="container-logo">
+          <img src="assets/logo/hashtag.svg" alt="Logo da Hashtag Magazine">
+        </div>
+      
+        <ul class="itens-menu">
+          <li><img src="assets/icons/user-solid.svg" alt="" class="icon"></li>
+          <li id="btnAbrirCarrinho" ><img src="assets/icons/cart-shopping-solid.svg" alt="" class="icon"></li>
+        </ul>
+      </nav>
+    </header>
 
       <main>
         <section id="container-produto">
         </section>
       </main>
       
-      <script src="main.js"></script>
+      <script type="module" src="main.js"></script>
     </body>
 </html>
