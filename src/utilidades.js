@@ -49,7 +49,7 @@ export const catalogo =[
         srcImg: "assets/gpus/4090.jpg"
     },
     {
-        id:9,
+        id:8,
         nome: "RX 580",
         marca: "GIGABYTE",
         valor: 600,

@@ -25,6 +25,8 @@
 #produtos-carrinho{
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
 }
 .card-produto-carrinho{
     display: flex;
@@ -32,7 +34,7 @@
     border-radius: 5px;
     gap: 2px;
     padding: 5px;
-    margin-top: 15px;
+    width: 100%;
 }
 .container-produto-carrinho{
     flex: 1;
