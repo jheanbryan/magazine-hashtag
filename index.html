@@ -19,8 +19,8 @@
 
       <section id="produtos-carrinho"></section>
 
-      <p>R$800,00</p>
-      <button>Finalizar Compra</button>
+      <span id="preco-total"></span>
+      <button class="finalizar-compra">Finalizar Compra</button>
     </section>
 
     <header>
@@ -37,8 +37,20 @@
     </header>
 
       <main>
-        <section id="container-produto">
+        <section id="filtros">
+          <div>
+            <input id="exibir-todos" type="radio" name="filtro" class="input" checked>
+            <label for="exibir-todos" class="label">Tudo</label>
+
+            <input id="exibir-cpus" type="radio" name="filtro" class="input">
+            <label for="exibir-cpus" class="label cpu">CPUS</label>
+
+            <input id="exibir-gpus" type="radio" name="filtro" class="input">
+            <label for="exibir-gpus" class="label gpu">GPUS</label>
+          </div>
         </section>
+ 
+        <section id="container-produto"></section>
       </main>
       
       <script type="module" src="main.js"></script>

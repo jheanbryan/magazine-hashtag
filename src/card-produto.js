@@ -4,14 +4,14 @@ import { adicionarAoCarrinho } from "./meu-carrinho";
 export function rendenizarCatalogo(){
     for (const produtoCatalogo of catalogo){
         const cartaoProduto = `
-            <div class="card-produto">
+            <div class="card-produto ${produtoCatalogo.cpu ? 'cpu' : 'gpu'}">
                 <div class="div-img-produto">
                     <img src="${produtoCatalogo.srcImg}" alt="processador athlon3000g" class="img-produto">
                 </div>
                 <h4 class="nome-produto">${produtoCatalogo.nome}</h4>
                 <span>${produtoCatalogo.marca}</span>
                 <h4>R$ ${produtoCatalogo.valor}</h4>
-                <button class="btn-carrinho" id="add-${produtoCatalogo.id}">Carrinho</button>
+                <button class="btn-carrinho" id="add-${produtoCatalogo.id}">Adicionar ao Carrinho</button>
             </div>`
         document.getElementById('container-produto').innerHTML += cartaoProduto;
     }

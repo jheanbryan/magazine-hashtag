@@ -1,6 +1,6 @@
-import { catalogo } from "./utilidades";
+import { catalogo, salvarLocalStorage, lerLocalStorage } from "./utilidades";
 
-const idsProdutoCarrinhoComQuantidade = {};
+const idsProdutoCarrinhoComQuantidade = lerLocalStorage('carrinho') ?? {};
 
 function abrirCarrinho(){
     document.getElementById('carrinho').style.right = '0';
@@ -19,6 +19,8 @@ export function inicializarCarrinho(){
 function removerDoCarrinho(idProduto){
     delete idsProdutoCarrinhoComQuantidade[idProduto];
     renderizarProdutosCarrinho();
+    salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade);
+    atualizarPrecoCarrinho();
 }
 
 function atualizarInfoQuantidade(idProduto){
@@ -28,6 +30,8 @@ function atualizarInfoQuantidade(idProduto){
 function incrementarQtdProduto(idProduto){
     idsProdutoCarrinhoComQuantidade[idProduto] ++;
     atualizarInfoQuantidade(idProduto);
+    salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade);
+    atualizarPrecoCarrinho();
 
 }
 function decrementarQtdProduto(idProduto){
@@ -36,7 +40,9 @@ function decrementarQtdProduto(idProduto){
         return;
     }
     idsProdutoCarrinhoComQuantidade[idProduto] --;
+    salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade);
     atualizarInfoQuantidade(idProduto);
+    atualizarPrecoCarrinho();
 }
 
 function desenharProdutoNoCarrinho(idProduto){
@@ -59,7 +65,7 @@ function desenharProdutoNoCarrinho(idProduto){
             </div>  
 
             <div class="container-remove-add">
-                <img src="assets/icons/circle-xmark-regular.svg" alt="" class="icon" id="remover-item-${produto.id}">   
+                <img src="assets/icons/circle-xmark-regular.svg" alt="" class="icon icon-remove" id="remover-item-${produto.id}">   
 
                 <div class="menos-mais-btns">
                     <button id="decrementar-produto-${produto.id}">-</button>
@@ -84,7 +90,7 @@ function desenharProdutoNoCarrinho(idProduto){
     }
 }
 
-function renderizarProdutosCarrinho(){
+export function renderizarProdutosCarrinho(){
     const containerProdtudosCarrinho = document.getElementById('produtos-carrinho');
     containerProdtudosCarrinho.innerHTML = "";
 
@@ -101,5 +107,24 @@ export function adicionarAoCarrinho(idProduto){
         return;
     }
     idsProdutoCarrinhoComQuantidade[idProduto] = 1;
+    salvarLocalStorage('carrinho', idsProdutoCarrinhoComQuantidade);
     desenharProdutoNoCarrinho(idProduto);
+    atualizarPrecoCarrinho();
+}
+
+export function atualizarPrecoCarrinho(){
+    let precoCarrinho = document.getElementById('preco-total');
+    let precoTotalCarrinho = 0;
+
+    for(const idProdutoNoCarrinho in idsProdutoCarrinhoComQuantidade){
+        precoTotalCarrinho += catalogo.find(p => p.id == idProdutoNoCarrinho).valor * idsProdutoCarrinhoComQuantidade[idProdutoNoCarrinho];
+    }
+
+    precoCarrinho.style.display = 'inline';
+    precoCarrinho.innerText = `Total: R$ ${precoTotalCarrinho},00`
+
+    if (precoTotalCarrinho == 0) {
+        precoCarrinho.style.display = 'none ';
+        precoCarrinho.innerText = ""    
+    }
 }

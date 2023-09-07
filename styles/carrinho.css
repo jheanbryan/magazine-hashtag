@@ -55,10 +55,40 @@
 .container-remove-add{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
+}
+.icon-remove{
+    margin-left: auto;
 }
 .menos-mais-btns{
     display: flex;
     align-items: center;
+    gap: 2px;
+}
+.menos-mais-btns button{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+#preco-total{
+    background-color: white;
+    color: rgba(0, 128, 0, 0.676);
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    display: none;
+}
+
+.finalizar-compra{
+    cursor: pointer;
+    background-color: white;
+    color: #E44D26;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.finalizar-compra:hover{
+    background-color: #E44D26;
+    color: white;
 }

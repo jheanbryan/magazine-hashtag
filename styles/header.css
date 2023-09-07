@@ -20,4 +20,5 @@ nav{
 }
 .icon{
     width: 1.2em;
+    cursor: pointer;
 }
