@@ -70,6 +70,9 @@ export function lerLocalStorage(chave){
     return JSON.parse(localStorage.getItem(chave));
 }
 
+export function apagarDoLocalStorage(chave){
+    localStorage.removeItem(chave);
+}
 
 export function desenharProdutoNoCarrinhoSimples(idProduto, idContainerHtml, quantidadeProduto){
     const produto = catalogo.find(p => p.id == idProduto);
@@ -100,11 +103,6 @@ export function desenharProdutoNoCarrinhoSimples(idProduto, idContainerHtml, qua
         elementoDiv.innerHTML = cardProdutoCarrinho;    
         containerProdtudosCarrinho.appendChild(elementoDiv); 
         
-        document.getElementById(`decrementar-produto-${produto.id}`).addEventListener('click', () => decrementarQtdProduto(produto.id));
-
-        document.getElementById(`incrementar-produto-${produto.id}`).addEventListener('click', () => incrementarQtdProduto(produto.id));
-
-        document.getElementById(`remover-item-${produto.id}`).addEventListener('click', () => removerDoCarrinho(produto.id));
 
     } else{
         // Se o produto não for encontrado no catálogo

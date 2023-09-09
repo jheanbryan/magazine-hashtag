@@ -10,10 +10,18 @@ function fecharCarrinho(){
     document.getElementById('carrinho').style.right = '-300px';
 }
 
+function irParaCheckout(){
+    if (Object.keys(idsProdutoCarrinhoComQuantidade) == 0 ){
+        console.log('Carro fazio')
+    } else{
+        window.location.href = window.location.origin + "/checkout.html"
+    }
+}
+
 export function inicializarCarrinho(){
     document.getElementById('btnAbrirCarrinho').addEventListener('click', abrirCarrinho);
     document.getElementById('btnFecharCarrinho').addEventListener('click', fecharCarrinho);
-
+    document.getElementById('btnFinalizarCompra').addEventListener('click', irParaCheckout);
 } 
 
 function removerDoCarrinho(idProduto){

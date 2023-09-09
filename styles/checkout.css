@@ -3,6 +3,7 @@ form{
     width: 100%;
     gap: 5px;
     padding: 10px;
+    flex-wrap: wrap;
 }
 form > section{
     background-color: gainsboro;
@@ -28,7 +29,16 @@ p{
     gap: 10px;
     justify-content: center;
 }
-.container-produtos-checkout{
-    height: 70%;
+#container-produtos-checkout{
     overflow-y: auto;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+#celula-checkout{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: space-around;
 }
