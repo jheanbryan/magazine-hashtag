@@ -74,7 +74,7 @@ export function apagarDoLocalStorage(chave){
     localStorage.removeItem(chave);
 }
 
-export function desenharProdutoNoCarrinhoSimples(idProduto, idContainerHtml, quantidadeProduto){
+export function desenharProdutoNoCarrinhoSimples(idProduto, idContainerHtml, quantidadeProduto, url){
     const produto = catalogo.find(p => p.id == idProduto);
 
     if (produto){
@@ -84,7 +84,7 @@ export function desenharProdutoNoCarrinhoSimples(idProduto, idContainerHtml, qua
         const cardProdutoCarrinho = `
             <div class="container-produto-carrinho">
                 <div class="div-img-produto-carrinho">
-                    <img src=${produto.srcImg} alt="processador athlon3000g" class="img-produto-carrinho">
+                    <img src=${url}${produto.srcImg} alt="processador athlon3000g" class="img-produto-carrinho">
                 </div>
             
                 <div class="info-produto-carrinho">

@@ -14,7 +14,7 @@ function irParaCheckout(){
     if (Object.keys(idsProdutoCarrinhoComQuantidade) == 0 ){
         console.log('Carro fazio')
     } else{
-        window.location.href = window.location.origin + "/checkout.html"
+        window.location.href = window.location.origin + "/pages/checkout.html"
     }
 }
 
@@ -135,4 +135,5 @@ export function atualizarPrecoCarrinho(){
         precoCarrinho.style.display = 'none ';
         precoCarrinho.innerText = ""    
     }
+
 }

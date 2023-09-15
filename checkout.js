@@ -1,11 +1,14 @@
-import { desenharProdutoNoCarrinhoSimples, lerLocalStorage, apagarDoLocalStorage, salvarLocalStorage } from "./src/utilidades"
+import { 
+    desenharProdutoNoCarrinhoSimples,
+    lerLocalStorage, apagarDoLocalStorage,
+    salvarLocalStorage,
+    catalogo } from "./src/utilidades"
 
 function desenharProdutosCheckout(){
     const idsProdutoCarrinhoComQuantidade = lerLocalStorage('carrinho') ?? {};
 
-
     for (const idProduto in idsProdutoCarrinhoComQuantidade){
-        desenharProdutoNoCarrinhoSimples(idProduto, 'container-produtos-checkout',idsProdutoCarrinhoComQuantidade[idProduto]);
+        desenharProdutoNoCarrinhoSimples(idProduto, 'container-produtos-checkout',idsProdutoCarrinhoComQuantidade[idProduto], '../');
     }
 }
 
@@ -26,11 +29,17 @@ function finalizarCompra(evento){
         
         salvarLocalStorage('historico', historicoDePedidosAtualizado);
         apagarDoLocalStorage('carrinho');
-        window.location.href = window.location.origin + "/pedidos.html"
+        window.location.href = window.location.origin + "/pages/pedidos.html"
     }
 
 }
 
-desenharProdutosCheckout();
+const idsProdutoCarrinhoComQuantidade = lerLocalStorage('carrinho') ?? {};
+let precoTotalCarrinho = 0;
+for(const idProdutoNoCarrinho in idsProdutoCarrinhoComQuantidade){
+    precoTotalCarrinho += catalogo.find(p => p.id == idProdutoNoCarrinho).valor * idsProdutoCarrinhoComQuantidade[idProdutoNoCarrinho];
+}
 
+desenharProdutosCheckout();
+document.getElementById('valorTotal').innerText = `R$ ${precoTotalCarrinho},00`;
 document.addEventListener('submit', (evt) => finalizarCompra(evt));
