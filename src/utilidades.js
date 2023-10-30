@@ -4,7 +4,7 @@ export const catalogo =[
         nome: "Atlhon 3000G",
         marca: "AMD",
         valor: 500,
-        srcImg: "assets/cpus/athlon3000g.png",
+        srcImg: "https://github.com/jheanbryan/magazine-hashtag/blob/main/assets/cpus/athlon3000g.png?raw=true",
         cpu: true,
     },
     {
@@ -12,7 +12,7 @@ export const catalogo =[
         nome: "I3 10100F",
         marca: "Intel",
         valor: 800,
-        srcImg: "assets/cpus/i310100f.png",
+        srcImg: "https://github.com/jheanbryan/magazine-hashtag/blob/main/assets/cpus/i310100f.png?raw=true",
         cpu: true,
     },
     {
@@ -20,7 +20,7 @@ export const catalogo =[
         nome: "Ryzen 5 4600G",
         marca: "AMD",
         valor: 900,
-        srcImg: "assets/cpus/ryzen5.jpg",
+        srcImg: "https://github.com/jheanbryan/magazine-hashtag/blob/main/assets/cpus/ryzen5.jpg?raw=true",
         cpu: true,
     },
     {
@@ -28,7 +28,7 @@ export const catalogo =[
         nome: "Ryzen 5 5600G",
         marca: "AMD",
         valor: 1200,
-        srcImg: "assets/cpus/ryzen5.jpg",
+        srcImg: "https://github.com/jheanbryan/magazine-hashtag/blob/main/assets/cpus/ryzen5.jpg?raw=true",
         cpu: true,
     },
     {
@@ -36,28 +36,28 @@ export const catalogo =[
         nome: "GTX 1660 Super",
         marca: "MSI",
         valor: 1200,
-        srcImg: "assets/gpus/1660s.jpg"
+        srcImg: "https://github.com/jheanbryan/magazine-hashtag/blob/main/assets/gpus/1660s.jpg?raw=true"
     },
     {
         id:6,
         nome: "RTX 2060",
         marca: "GIGABYTE",
         valor: 1500,
-        srcImg: "assets/gpus/2060.jpg"
+        srcImg: "https://github.com/jheanbryan/magazine-hashtag/blob/main/assets/gpus/2060.jpg?raw=true"
     },
     {
         id:7,
         nome: "RTX 4090",
         marca: "AORUS",
         valor: 5000,
-        srcImg: "assets/gpus/4090.jpg"
+        srcImg: "https://github.com/jheanbryan/magazine-hashtag/blob/main/assets/gpus/4090.jpg?raw=true"
     },
     {
         id:8,
         nome: "RX 580",
         marca: "GIGABYTE",
         valor: 600,
-        srcImg: "assets/gpus/rx580.png"
+        srcImg: "https://github.com/jheanbryan/magazine-hashtag/blob/main/assets/gpus/rx580.png?raw=true"
     },
     
 ]

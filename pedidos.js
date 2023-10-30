@@ -11,7 +11,7 @@ function criarPedidoHistorico(pedidoComData){
     main.innerHTML += elementoPedido;
 
     for(const idProduto in pedidoComData.pedido){
-        desenharProdutoNoCarrinhoSimples(idProduto, `container-pedidos-${pedidoComData.dataPedido}`, pedidoComData.pedido[idProduto], '../');
+        desenharProdutoNoCarrinhoSimples(idProduto, `container-pedidos-${pedidoComData.dataPedido}`, pedidoComData.pedido[idProduto], '');
     }
 }
 
