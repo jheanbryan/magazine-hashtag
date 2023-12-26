@@ -14,7 +14,7 @@ function irParaCheckout(){
     if (Object.keys(idsProdutoCarrinhoComQuantidade) == 0 ){
         console.log('Carro fazio')
     } else{
-        window.location.href = " ../pages/checkout.html"
+        window.location.href = window.location.origin + "/pages/checkout.html"
     }
 }
 
