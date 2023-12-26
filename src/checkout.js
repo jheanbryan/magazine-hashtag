@@ -2,7 +2,7 @@ import {
     desenharProdutoNoCarrinhoSimples,
     lerLocalStorage, apagarDoLocalStorage,
     salvarLocalStorage,
-    catalogo } from "./src/utilidades"
+    catalogo } from "./utilidades"
 
 function desenharProdutosCheckout(){
     const idsProdutoCarrinhoComQuantidade = lerLocalStorage('carrinho') ?? {};
